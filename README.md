@@ -86,3 +86,9 @@ Replace that placeholder URL with your actual published story. The embed validat
 Edit `src/app/pages/about/about.component.html` to personalize the About page. The included articles are sample content.
 
 Deploy the production output to a static host. Configure an SPA fallback to `index.html` so direct visits and refreshes on `/about` and `/blog/:slug` work. The domain name in the branding does not configure or publish MeetMattZ.com.
+
+### Netlify
+
+Import this repository into Netlify with the repository root as the base directory. The checked-in `netlify.toml` sets `npm run build` as the build command, publishes `dist/meetmattz/browser`, and rewrites Angular routes to `index.html`. Netlify reads `.nvmrc` for the Node.js version. No environment variables or server functions are required.
+
+After deploying, add `meetmattz.com` in Netlify's domain settings and follow its DNS instructions. Verify that opening and refreshing `/about` and a published `/blog/:slug` URL works.

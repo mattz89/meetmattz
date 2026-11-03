@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist/meetmattz/browser"
+
+# Serve Angular routes through the app; existing assets are served normally.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
