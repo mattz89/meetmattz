@@ -20,7 +20,7 @@ export const posts: readonly Post[] = [
       "Every project starts somewhere. This one starts with a blank page, a little curiosity, and a place to share what I learn.",
     date: "2026-11-02",
     category: "Personal",
-    published: true,
+    published: false,
     readingMinutes: 1,
     loadContent: () =>
       import("../posts/a-small-place-on-the-internet/a-small-place-on-the-internet.component").then(
@@ -34,7 +34,7 @@ export const posts: readonly Post[] = [
       "Standalone components, a few routes, and room to grow. A small site is a good reminder that you don’t always need more.",
     date: "2026-10-28",
     category: "Angular",
-    published: true,
+    published: false,
     readingMinutes: 2,
     loadContent: () =>
       import("../posts/keeping-angular-simple/keeping-angular-simple.component").then(
@@ -48,7 +48,7 @@ export const posts: readonly Post[] = [
       "The best time to document a tricky problem is while you still remember what made it tricky.",
     date: "2026-10-21",
     category: "Learning",
-    published: true,
+    published: false,
     readingMinutes: 1,
     loadContent: () =>
       import("../posts/notes-worth-keeping/notes-worth-keeping.component").then(
