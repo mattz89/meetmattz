@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  min-width: 0;
+  margin: 28px 0;
+}
+figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #eeefe7;
+}
+figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  font:
+    12px/1.6 ui-monospace,
+    monospace;
+}
+figcaption span {
+  color: var(--muted);
+}
+pre {
+  margin: 0;
+  padding: 20px;
+  overflow-x: auto;
+  font:
+    14px/1.8 ui-monospace,
+    monospace;
+  tab-size: 2;
+}
+pre:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: -2px;
+}

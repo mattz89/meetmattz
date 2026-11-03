@@ -1,0 +1,29 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="site-shell">
+  <header class="site-header">
+    <a class="wordmark" routerLink="/" aria-label="MeetMattZ home"
+      >MeetMattZ<span>.</span></a
+    >
+    <nav aria-label="Main navigation">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+        >Writing</a
+      >
+      <a
+        routerLink="/about"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >About</a
+      >
+    </nav>
+  </header>
+  <main id="main" tabindex="-1"><router-outlet /></main>
+  <footer class="site-footer">
+    <span>© {{ year }} MeetMattZ</span
+    ><span>Built with Angular. Codex may have helped.</span
+    ><a routerLink="/about">A little about me ↗</a>
+  </footer>
+</div>

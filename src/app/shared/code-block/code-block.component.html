@@ -1,0 +1,9 @@
+<figure>
+  <figcaption>
+    {{ filename() || "Code example" }} <span>{{ language() }}</span>
+  </figcaption>
+  <pre
+    tabindex="0"
+    [attr.aria-label]="(filename() || 'Code example') + ', ' + language()"
+  >@if (highlightedCode(); as highlighted) {<code [innerHTML]="highlighted"></code>} @else {<code [textContent]="code()"></code>}</pre>
+</figure>

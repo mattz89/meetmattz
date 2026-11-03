@@ -1,0 +1,39 @@
+@if (post(); as post) {
+  <article class="full-post">
+    <a class="back-link" routerLink="/">← All writing</a>
+    <header class="article-header">
+      <p class="eyebrow">{{ post.category }}</p>
+      <h1>{{ post.title }}</h1>
+      <div class="article-meta">
+        <span>By Matt</span><span aria-hidden="true">/</span
+        ><time [attr.datetime]="post.date">{{
+          post.date | date: "MMMM d, yyyy" : "UTC"
+        }}</time
+        ><span aria-hidden="true">/</span
+        ><span>{{ post.readingMinutes }} min read</span>
+      </div>
+    </header>
+    <div class="prose">
+      <p class="article-lead">{{ post.excerpt }}</p>
+      @if (content.isLoading()) {
+        <p role="status">Loading article…</p>
+      } @else if (content.error()) {
+        <p role="alert">The article couldn’t load. Please try again.</p>
+        <button type="button" (click)="content.reload()">Try again</button>
+      } @else if (content.hasValue()) {
+        <ng-container *ngComponentOutlet="content.value()" />
+      }
+    </div>
+    <div class="article-ending">
+      <span>Thanks for reading.</span
+      ><a class="text-link" routerLink="/">Back to all writing ↗</a>
+    </div>
+  </article>
+} @else {
+  <section class="empty-state">
+    <p class="eyebrow">404 · POST NOT FOUND</p>
+    <h1>This page is<br />still unwritten<span class="accent">.</span></h1>
+    <p>That post may have moved, or the link may be incorrect.</p>
+    <a class="text-link" routerLink="/">Back to all writing ↗</a>
+  </section>
+}

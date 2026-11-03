@@ -1,0 +1,41 @@
+<p>
+  A blog has a short list of jobs: show a list of posts, open a post, and tell
+  readers a little about the person behind it. The implementation can be just as
+  direct.
+</p>
+
+<p>
+  Angular’s standalone components make that a comfortable starting point. Each
+  page declares the things it uses, and the router connects the pages. There’s
+  no need to introduce a module for every feature.
+</p>
+
+<p>
+  Each article on this site is a lazy-loaded standalone component. Its HTML
+  brings prose, code samples, and working examples together; metadata stays in a
+  separate post registry.
+</p>
+
+<p>
+  Simplicity isn’t a promise to never add anything. It’s a decision to let an
+  actual need lead the next change. Start with a clear structure, then give
+  yourself room to learn.
+</p>
+
+<h2>A small, working example</h2>
+<p>
+  This counter is a real Angular component. Try it, then look at the signal that
+  drives it.
+</p>
+<app-counter-demo />
+<app-code-block
+  language="typescript"
+  filename="counter-demo.component.ts"
+  [code]="counterCode"
+/>
+<h2>When to use Storybook</h2>
+<p>
+  Use local components when the example belongs to the article. For a component
+  maintained in a separate library, embed its hosted Storybook story so readers
+  can explore the same example as the library documentation.
+</p>

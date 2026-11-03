@@ -1,0 +1,44 @@
+<section class="intro" aria-labelledby="intro-title">
+  <p class="eyebrow"><span class="status-dot"></span> A DEVELOPER’S NOTEBOOK</p>
+  <h1 id="intro-title">
+    Hey, I'm Matt<span class="accent">.</span>
+  </h1>
+  <p class="intro-copy">
+      I'm a software engineer with a background that goes a little beyond software. This is where I share my projects, ideas, and occasional detours.
+  </p>
+  <a class="text-link" routerLink="/about"
+    >More about me <span aria-hidden="true">↗</span></a
+  >
+  <div class="intro-decoration" aria-hidden="true">
+    <span>hello, world.</span><span class="cursor">_</span>
+  </div>
+</section>
+<section class="writing-section" aria-labelledby="writing-title">
+  <div class="section-heading">
+    <h2 id="writing-title">Latest writing</h2>
+    <span
+      >{{ posts.length.toString().padStart(2, "0") }} POSTS · NEWEST FIRST</span
+    >
+  </div>
+  @for (post of posts; track post.slug; let first = $first) {
+    <article class="post-preview" [class.featured]="first">
+      <div class="post-meta">
+        <time [attr.datetime]="post.date">{{
+          post.date | date: "MMM d, yyyy" : "UTC"
+        }}</time
+        ><span class="category">{{ post.category }}</span>
+      </div>
+      <div class="post-preview-body">
+        <h3>
+          <a [routerLink]="['/blog', post.slug]"
+            >{{ post.title
+            }}<span class="post-arrow" aria-hidden="true">↗</span></a
+          >
+        </h3>
+        <p>{{ post.excerpt }}</p>
+        <span class="reading-time">{{ post.readingMinutes }} min read</span>
+      </div>
+    </article>
+  }
+  <p class="endnote">A few thoughts, a little code, and more to come.</p>
+</section>

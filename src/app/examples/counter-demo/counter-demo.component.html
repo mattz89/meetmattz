@@ -1,0 +1,11 @@
+<section aria-label="Interactive counter example">
+  <p>
+    Count: <output aria-live="polite">{{ count() }}</output>
+  </p>
+  <div>
+    <button type="button" (click)="increment()">Increment</button>
+    <button type="button" (click)="reset()" [disabled]="count() === 0">
+      Reset
+    </button>
+  </div>
+</section>

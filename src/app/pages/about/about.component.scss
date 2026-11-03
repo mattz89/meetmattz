@@ -1,0 +1,30 @@
+.page-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 75px 0 40px;
+}
+.about-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+.page-deck {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.7;
+  margin-top: 24px;
+}
+.about-prose {
+  padding-bottom: 90px;
+}
+@media (max-width: 740px) {
+  .page-intro {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 55px;
+  }
+}

@@ -1,0 +1,30 @@
+<figure>
+  <figcaption>{{ title() }}</figcaption>
+  @if (storyUrl(); as url) {
+    @if (loaded()) {
+      <iframe
+        [src]="embedUrl()"
+        [title]="title()"
+        loading="lazy"
+        sandbox="allow-scripts allow-same-origin"
+        referrerpolicy="no-referrer"
+      ></iframe>
+      <p>
+        If the example doesn’t appear, the host may block embedding.
+        <a [href]="url" target="_blank" rel="noopener noreferrer"
+          >Open in Storybook ↗</a
+        >
+      </p>
+    } @else {
+      <p>This example loads from an external Storybook site.</p>
+      <button type="button" (click)="loaded.set(true)">
+        Load interactive example
+      </button>
+      <a [href]="url" target="_blank" rel="noopener noreferrer"
+        >Open in Storybook ↗</a
+      >
+    }
+  } @else {
+    <p>A valid HTTPS Storybook iframe URL with a story ID is required.</p>
+  }
+</figure>
