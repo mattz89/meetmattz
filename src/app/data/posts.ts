@@ -34,7 +34,7 @@ export const posts: readonly Post[] = [
       "Standalone components, a few routes, and room to grow. A small site is a good reminder that you don’t always need more.",
     date: "2026-10-28",
     category: "Angular",
-    published: false,
+    published: true,
     readingMinutes: 2,
     loadContent: () =>
       import("../posts/keeping-angular-simple/keeping-angular-simple.component").then(

@@ -10,6 +10,13 @@
   color: var(--ink);
   background: var(--paper);
   font-synthesis: none;
+  // Keep the centered layout steady when navigating between short and long pages.
+  scrollbar-gutter: stable;
+}
+@supports not (scrollbar-gutter: stable) {
+  html {
+    overflow-y: scroll;
+  }
 }
 * {
   box-sizing: border-box;
